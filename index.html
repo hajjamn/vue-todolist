@@ -21,7 +21,7 @@
             <div class="card-body">
               <ul class="to-do-list">
                 <li v-for="(toDoElement, i) in toDoList" @click="toDoElement.done = !toDoElement.done">
-                  <p>{{ toDoElement.text }}</p>
+                  <p :class="(toDoElement.done === true) ? 'text-decoration-line-through' : ''">{{ toDoElement.text }}</p>
                 </li>
               </ul>
             </div>
