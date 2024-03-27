@@ -21,7 +21,7 @@
             <div class="card-body">
               <div class="row px-4 pt-3 align-items-center">
                 <div class="col-9">
-                  <input type="text" placeholder="Aggiungi un elemento alla lista" class="w-100" v-model="newItemText">
+                  <input type="text" placeholder="Aggiungi un elemento alla lista" class="w-100" @keyup.enter="addNewItem()" v-model="newItemText">
                 </div>
                 <div class="col-3">
                   <button class="btn btn-secondary" @click="addNewItem()">Aggiungi</button>
