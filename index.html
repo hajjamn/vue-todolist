@@ -20,8 +20,9 @@
             </div>
             <div class="card-body">
               <ul class="to-do-list">
-                <li v-for="(toDoElement, i) in toDoList" @click="toDoElement.done = !toDoElement.done">
-                  <p :class="(toDoElement.done === true) ? 'text-decoration-line-through' : ''">{{ toDoElement.text }}</p>
+                <li v-for="(item, i) in toDoList" >
+                  <p @click="item.done = !item.done" :class="(item.done === true) ? 'text-decoration-line-through' : ''">{{ item.text }}</p>
+                  <button class="btn btn-danger" @click="deleteItem(i)" > X </button>
                 </li>
               </ul>
             </div>
