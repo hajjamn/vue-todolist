@@ -19,6 +19,15 @@
               <h2>To Do List</h2>
             </div>
             <div class="card-body">
+              <div class="row px-4 pt-3 align-items-center">
+                <div class="col-9">
+                  <input type="text" placeholder="Aggiungi un elemento alla lista" class="w-100" v-model="newItem.text">
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-secondary" @click="addNewItem()" >Aggiungi</button>
+                </div>
+              </div>
+
               <ul class="to-do-list">
                 <li v-for="(item, i) in toDoList" class="d-flex justify-content-between align-items-center my-3 border-bottom">
                   <span @click="item.done = !item.done" :class="(item.done === true) ? 'text-decoration-line-through' : ''">{{ item.text }}</span>

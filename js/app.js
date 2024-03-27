@@ -46,11 +46,18 @@ createApp({
           done: false,
         },
       ],
+      newItem: {
+        text: null,
+        done: false,
+      }
     }
   },
   methods: {
     deleteItem(i) {
       this.toDoList.splice(i, 1)
+    },
+    addNewItem() {
+      this.toDoList.push(this.newItem)
     }
   },
 }).mount('#app')
