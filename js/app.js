@@ -46,10 +46,7 @@ createApp({
           done: false,
         },
       ],
-      newItem: {
-        text: null,
-        done: false,
-      }
+      newItemText: null
     }
   },
   methods: {
@@ -57,7 +54,11 @@ createApp({
       this.toDoList.splice(i, 1)
     },
     addNewItem() {
-      this.toDoList.push(this.newItem)
-    }
+      this.toDoList.push({text: this.newItemText, done: false})
+      this.inputReset()
+    },
+    inputReset() {
+      this.newItemText = null
+    },
   },
 }).mount('#app')
